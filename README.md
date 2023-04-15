@@ -1,2 +1,2 @@
 # Learn-Hugo
-This repo includes Code examples of for Hugo Site Development
+This repo includes Code examples for Hugo Site Development
