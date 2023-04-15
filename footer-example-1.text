@@ -1,0 +1,17 @@
+<div class="d-block bg-dark">
+    <div class="p-2 text-light">
+        {{ with .Site.Params.footer }}
+        {{ . | markdownify }}
+        {{ else }}
+        <!-- <span id="js-year"></span> is js date, {{now.Format "2006"}} is hugo date, noscript means if js doesn't work -->
+        <!-- pipe ' | ' allows to run second command after first one -->
+        <small>&copy; <span id="js-year"></span><noscript>{{now.Format "2006"}}</noscript>  - {{ .Site.Copyright | default .Site.Title }}</small>
+        {{ end }}
+    </div>
+</div>
+<!-- using js to generate date -->
+<script>
+    const date = new Date();
+    const jsYear =  document.getElementById("js-year");
+    jsYear.innerHTML = date.getFullYear();
+</script>
