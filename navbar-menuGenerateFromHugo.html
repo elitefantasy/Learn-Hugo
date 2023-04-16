@@ -6,3 +6,13 @@
   </a>
 </li>
 {{ end }}
+
+
+<!-- final code example menu from hugo -->
+{{ range .Site.Menus.main }}
+<li class="nav-item">
+    <a class="nav-link{{ if $.IsMenuCurrent "main" . }} active" aria-current="page{{ end }}" href="{{ .URL }}"> {{ .Pre }}
+        <span>{{ .Name }}</span>
+    </a>
+</li>
+{{ end }}
