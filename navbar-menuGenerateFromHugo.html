@@ -1,0 +1,8 @@
+<!-- generating menu from hugo -->
+{{ range .Site.Menus.main }}
+<li >
+  <a class="{{ if $.IsMenuCurrent "main" . }} active{{ end }}" href="{{ .URL }}"> {{ .Pre }}
+    <span>{{ .Name }}</span>
+  </a>
+</li>
+{{ end }}
