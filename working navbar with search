@@ -1,0 +1,194 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navigation Menu</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- Unicons CSS -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Logo</a>
+    <div class="group">
+      <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Github</a></li>
+      </ul>
+    </div>
+    <div class="input-box">
+      <input type="text" placeholder="Search...">
+      <span class="search">
+        <i class="uil uil-search search-icon"></i>
+      </span>
+      <i class="uil uil-times close-icon"></i>
+    </div>
+  </header>
+  <script>
+    let inputBox = document.querySelector(".input-box"),
+      search = document.querySelector(".search"),
+      closeIcon = document.querySelector(".close-icon");
+
+      search.addEventListener("click", () => inputBox.classList.add("open"));
+      closeIcon.addEventListener("click", () => inputBox.classList.remove("open"));
+  </script>
+</body>
+</html>
+
+
+<!--put below code under style.css file-->
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body
+{
+    background: #dee1e2;
+    min-height: 100yh;
+    overflow-x: hidden;
+}
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #242527;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 15px 15px #c9c7ca;
+}
+.logo
+{
+    color: #695bfb;
+    text-decoration: none;
+    font-size: 2.5em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+.group
+{
+    display: flex;
+    align-items: center;
+}
+header ul
+{
+    position: relative;
+    display: flex;
+    gap: 30px;
+}
+header ul li
+{
+    list-style: none;
+}
+header ul li a
+{
+    position: relative;
+    text-decoration: none;
+    font-size: 1em;
+    color: #ffff;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+}
+header ul li a::before
+{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #575555;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+}
+header ul li a:hover::before
+{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.input-box{
+    position: relative;
+    height: 55px;
+    max-width: 60px;
+    width: 100%;
+    margin: 0 20px;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.input-box.open{
+    max-width: 350px;
+}
+.input-box input{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333 ;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.input-box.open input{
+    padding: 0 15px 0 65px;
+}
+.input-box .search{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 60px;
+    border-radius: 6px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.input-box.open .search{
+    border-radius: 6px 0 0 6px;
+}
+.search .search-icon{
+    font-size: 25px;
+    color: #695bfb;
+    transform: rotate(90deg);
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.input-box.open .search-icon{
+    transform: rotate(0deg);
+}
+.input-box .close-icon{
+    position: absolute;
+    right: -45px;
+    top: 10%;
+    transform: translate(-50%);
+    font-size: 30px;
+    color: #695bfb;
+    opacity: 0;
+    pointer-events: none;
+    /* padding: 5px; */
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.input-box.open .close-icon{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%) rotate(180deg);
+}
