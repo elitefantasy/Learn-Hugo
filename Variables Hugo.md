@@ -6,7 +6,7 @@
 {{ .URL }}
 ```
 
-creating variable inside a markdown file
+## creating variable inside a markdown file
 ```
 ---
 myVar: "myValue"
@@ -27,5 +27,5 @@ To access this variable from inside a markdown file
 Example 1 of using variable
 ```
 {{ $color := "red" }}
-<h1 style="color: {{ $color }}">Change my color</h1>
+<h1 style="color: {{ $color }};">Change my color</h1>
 ```
