@@ -7,6 +7,7 @@
 
   <!-- CSS  -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- in hugo it's best to use relURL if u are using css from static folder fro ex: <link rel="stylesheet" type="text/css" href="{{ "css/style.css" | relURL }}"> -->
 
   <!-- Unicons CSS -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
