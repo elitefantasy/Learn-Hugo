@@ -29,3 +29,16 @@ Example 1 of using variable
 {{ $color := "red" }}
 <h1 style="color: {{ $color }};">Change my color</h1>
 ```
+
+## The .Site.Params Variable
+`for config.yaml`
+```
+params:
+  author: Nikola Tesla
+  description: Tesla's Awesome Hugo Site
+```
+You can use .Site.Params in a partial template to call the default site description:
+`layouts/partials/head.html`
+```
+<meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
+```
