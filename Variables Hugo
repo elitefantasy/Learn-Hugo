@@ -2,8 +2,16 @@
 {{ .Date }}
 {{ .URL }}
 
-defining variable inside a markdown file
+creating variable inside a markdown file
 ---
 myVar: "myValue"
 ---
-To acces variable from inside a markdown file
+To access this variable from inside a markdown file
+{{ .Params.myVar }}
+
+
+creating a custom variable
+{{ $myVarName := "string or numeric or boolean"}} you are defining the variable here
+{{ $myVarName = "updated string"}} you are updating the variable here
+accessing the above variable
+{{ $myVarName }}
