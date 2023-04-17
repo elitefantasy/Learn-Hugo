@@ -36,7 +36,7 @@
             <a class="nav-link" href="#">Link</a>
           </li> -->
         <!-- generating menu from hugo -->
-        <!--first define menu name in config file with => sectionPagesMenu="mainmenu" -->
+        <!--first define menu name in config file with => sectionPagesMenu="main" -->
         {{ range .Site.Menus.main }}
         <li class="nav-item">
             <a class="nav-link{{ if $.IsMenuCurrent "main" . }} active" aria-current="page{{ end }}" href="{{ .URL }}"> {{ .Pre }}
