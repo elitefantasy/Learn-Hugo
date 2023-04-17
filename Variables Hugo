@@ -1,1 +1,9 @@
 {{ .Titel }} fetches the title of PAGE
+{{ .Date }}
+{{ .URL }}
+
+defining variable inside a markdown file
+---
+myVar: "myValue"
+---
+To acces variable from inside a markdown file
