@@ -193,3 +193,11 @@ header ul li a:hover::before
     pointer-events: auto;
     transform: translate(-50%) rotate(180deg);
 }
+
+
+<!-- Troubleshoot Note -->
+/*
+problem with linking href
+if u face problem such link is appending like website/posts/website/posts when you click then use href as relURL in hugo
+href="{{ "posts/" | relURL }}
+*/
